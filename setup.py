@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="flask_ignite",
-    version="0.1.0",
+    version="0.1.1",
     description="A simple Flask app creator",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
@@ -20,7 +20,7 @@ setup(
     python_requires=">=3.7",
     entry_points={
         "console_scripts": [
-            "flask-admin=setup_flask_project:main",
+            "flask-admin=flask_admin.setup_flask_project:main",
         ],
     },
 )
