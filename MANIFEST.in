@@ -1,0 +1,4 @@
+include README.md
+include requirements.txt
+graft my_flask_app
+global-exclude __pycache__ *.pyc
