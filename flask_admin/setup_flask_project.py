@@ -159,7 +159,7 @@ def main():
 
     print("\n✅ Flask project structure created successfully!")
     print("\n👉 Next Steps:")
-    print("1. Navigate into the project: `cd flask_app`")
+    print(f"1. Navigate into the project: `cd {project_name}`")
     print("2. Create a virtual environment: `python -m venv venv`")
     print("3. Activate the virtual environment:")
     print("   - Windows: `venv\\Scripts\\activate`")
