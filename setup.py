@@ -20,7 +20,7 @@ setup(
     python_requires=">=3.7",
     entry_points={
         "console_scripts": [
-            "flask-admin=flask_admin.setup_flask_project:main",
+            "flask-ignite=flask_admin.setup_flask_project:main",
         ],
     },
 )

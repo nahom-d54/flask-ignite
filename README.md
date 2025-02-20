@@ -25,7 +25,7 @@ This repository contains a utility package that, once installed, provides a CLI 
    From the root of the repository, install the package locally:
 
    ```sh
-   pip install flask-ignite --project <your_project_name> # defaults to flask_app
+   pip install flask-ignite
    ```
 
 3. **Run the Project Setup Command**
@@ -33,7 +33,7 @@ This repository contains a utility package that, once installed, provides a CLI 
    Execute the following command to generate the Flask project structure:
 
    ```sh
-   flask-admin
+   flask-ignite --project <your_project_name> # defaults to flask_app
    ```
 
    This will create a project structure similar to the following:
