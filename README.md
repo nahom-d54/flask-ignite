@@ -1,10 +1,10 @@
-# Flask Iginite
+# Flask Ignite
 
 A simple Flask app creator that automatically generates a basic Flask project structure including models, routes, services, configuration, and more.
 
 ## Getting Started
 
-This repository contains a utility script, [setup_flask_project.py](setup_flask_project.py), which creates a Flask project structure when executed.
+This repository contains a utility package that, once installed, provides a CLI command to create a Flask project structure automatically. The command is registered as a console script named `flask-admin`.
 
 ## Prerequisites
 
@@ -20,15 +20,23 @@ This repository contains a utility script, [setup_flask_project.py](setup_flask_
 
    Clone this repository to your local machine.
 
-2. **Run the Project Setup Script**
+2. **Install the Package**
 
-   From the root of the repository, run:
+   From the root of the repository, install the package locally:
 
    ```sh
-   python setup_flask_project.py
+   pip install flask-ignite --project <your_project_name> # defaults to flask_app
    ```
 
-   This will create the following project structure:
+3. **Run the Project Setup Command**
+
+   Execute the following command to generate the Flask project structure:
+
+   ```sh
+   flask-admin
+   ```
+
+   This will create a project structure similar to the following:
 
    - **flask_app/**
      - **app/**
@@ -55,9 +63,9 @@ This repository contains a utility script, [setup_flask_project.py](setup_flask_
      - `wsgi.py`
      - `run.py`
 
-3. **Next Steps**
+4. **Next Steps**
 
-   After running the setup script, follow these steps:
+   After generating the project, follow these steps:
 
    - Navigate into the generated project directory:
 
@@ -73,10 +81,16 @@ This repository contains a utility script, [setup_flask_project.py](setup_flask_
 
    - Activate the virtual environment:
 
-     - **Windows:** `venv\Scripts\activate`
-     - **Mac/Linux:** `source venv/bin/activate`
+     - **Windows:**
+       ```sh
+       venv\Scripts\activate
+       ```
+     - **Mac/Linux:**
+       ```sh
+       source venv/bin/activate
+       ```
 
-   - Install dependencies:
+   - Install the project dependencies:
 
      ```sh
      pip install -r requirements.txt
@@ -96,11 +110,11 @@ This repository contains a utility script, [setup_flask_project.py](setup_flask_
 
 ## Project Structure Overview
 
-- **app/models**: Contains database models such as `User` and `Post` (user.py and post.py).
-- **app/routes**: Defines routes using Blueprints for handling API endpoints (user_routes.py and post_routes.py).
-- **app/services**: Holds service functions to manipulate or retrieve data (user_service.py).
-- **app/config**: Stores configuration settings and environment-specific variables (settings.py).
-- **app/extensions.py**: Initializes extensions like SQLAlchemy and Migrate.
+- **app/models**: Contains database models (e.g., `User` and `Post` defined in `user.py` and `post.py`).
+- **app/routes**: Defines routes using Blueprints for handling API endpoints (in `user_routes.py` and `post_routes.py`).
+- **app/services**: Holds service functions for data manipulation or retrieval (in `user_service.py`).
+- **app/config**: Stores configuration settings and environment-specific variables (in `settings.py`).
+- **app/extensions.py**: Initializes Flask extensions like SQLAlchemy and Migrate.
 - **app/**init**.py**: Creates and configures the Flask application.
 
 ## License

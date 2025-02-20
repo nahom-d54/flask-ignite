@@ -1,7 +1,8 @@
 import os
+import argparse
 
 # Define project structure
-project_structure = {
+project_structure_template = {
     "flask_app": {
         "app": {
             "models": {
@@ -138,6 +139,21 @@ def create_structure(base_path: str, structure: dict):
 
 def main():
     """Create the project structure"""
+    parser = argparse.ArgumentParser(description="Generate a Flask project structure.")
+    parser.add_argument(
+        "--project",
+        type=str,
+        default="flask_app",
+        help="Name of the project directory (default: flask_app)",
+    )
+    args = parser.parse_args()
+
+    # Use the provided project name or default to 'flask_app'
+    project_name = args.project
+
+    # Build a new project structure with the given project name as the top-level folder
+    project_structure = {project_name: project_structure_template["flask_app"]}
+
     base_dir = os.getcwd()
     create_structure(base_dir, project_structure)
 
