@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="flask_scaffold",
+    name="flask_ignite",
     version="0.1.0",
     description="A simple Flask app creator",
     long_description=open("README.md").read(),
