@@ -1,4 +1,4 @@
-# Flask Admin
+# Flask Scaffold
 
 A simple Flask app creator that automatically generates a basic Flask project structure including models, routes, services, configuration, and more.
 
