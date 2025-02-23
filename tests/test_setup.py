@@ -8,7 +8,9 @@ from flask_ignite import setup_flask_project
 def test_default_project_creation(monkeypatch):
     # Use a temporary directory for testing
     with tempfile.TemporaryDirectory() as tmpdirname:
+        monkeypatch.setenv("TMPDIR", tmpdirname)
         monkeypatch.chdir(tmpdirname)
+        # Ensure no other process is using the temporary directory
         # Set up sys.argv to simulate calling the CLI without a custom project name
         sys.argv = ["flask-ignite"]
 
@@ -24,10 +26,13 @@ def test_default_project_creation(monkeypatch):
             file_path = os.path.join(project_path, filename)
             assert os.path.isfile(file_path)
 
+        monkeypatch.undo()
+
 
 def test_custom_project_creation(monkeypatch):
     custom_project = "my_flask_project"
     with tempfile.TemporaryDirectory() as tmpdirname:
+        monkeypatch.setenv("TMPDIR", tmpdirname)
         monkeypatch.chdir(tmpdirname)
         # Set up sys.argv to simulate passing a custom project name argument
         sys.argv = ["flask-ignite", "--project", custom_project]
@@ -43,3 +48,5 @@ def test_custom_project_creation(monkeypatch):
         for filename in ["run.py", "requirements.txt", "config.py"]:
             file_path = os.path.join(project_path, filename)
             assert os.path.isfile(file_path)
+
+        monkeypatch.undo()
